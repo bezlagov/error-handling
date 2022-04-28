@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import Test from './components/Test/Test';
+import React, { Fragment } from 'react';
+import RoutingTest from './components/RoutingTest/RoutingTest';
+import { BrowserRouter as Router } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment key="test key">
+      <div className="App">
+        <ErrorBoundary>
+          <Test />
+        </ErrorBoundary>
+      </div>
+      <hr />
+      <Router>
+        <RoutingTest />
+      </Router>
+    </Fragment>
   );
 }
 
